@@ -1,0 +1,27 @@
+name: Build poolamkoo APK (Flutter)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Rebrand
+        run: |
+          chmod +x rebrand.sh || true
+          bash rebrand.sh || true
+      - run: flutter pub get
+      - run: flutter build apk --debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: poplolam-koo-arya-flutter-apk
+          path: build/app/outputs/flutter-apk/*.apk
