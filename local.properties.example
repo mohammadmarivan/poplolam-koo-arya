@@ -1,0 +1,4 @@
+## مسیر SDK را با سیستم خودت عوض کن
+# sdk.dir=/Users/YOU/Library/Android/sdk
+# sdk.dir=C:\\Users\\YOU\\AppData\\Local\\Android\\Sdk
+# sdk.dir=/home/YOU/Android/Sdk
