@@ -1,0 +1,21 @@
+# دستورهای آماده — poolamkoo
+# git + gh (GitHub CLI)
+
+git clone https://github.com/doxigo/muchToman.git poplolam-koo-arya
+cd poplolam-koo-arya
+
+# فایل‌های کیت ریبرند را در همین پوشه کپی کن
+chmod +x rebrand.sh
+bash rebrand.sh
+
+git add -A
+git commit -m "rebrand: poolamkoo from doxigo/muchToman"
+
+git remote rename origin upstream
+
+gh repo create mohammadmarivan/poplolam-koo-arya --private --source=. --remote=origin --push
+
+# بدون gh:
+# git remote add origin https://github.com/mohammadmarivan/poplolam-koo-arya.git
+# git branch -M main
+# git push -u origin main
